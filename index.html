@@ -167,18 +167,13 @@ input, textarea, select, button { font-family: inherit; }
   position: relative; overflow: hidden;
   padding-top: 80px;
 }
-
-/* Hero background — layered CSS art: books, flags, classroom feel */
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    /* overlay gradient for readability */
     linear-gradient(135deg, rgba(26,86,219,0.88) 0%, rgba(17,64,168,0.82) 45%, rgba(185,28,28,0.75) 100%),
-    /* subtle noise texture */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   background-color: var(--blue-dark);
 }
-/* Decorative shapes — books, pencil lines */
 .hero-deco {
   position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
 }
@@ -194,10 +189,6 @@ input, textarea, select, button { font-family: inherit; }
   overflow: hidden; border: 1.5px solid rgba(255,255,255,0.3);
   flex-shrink: 0;
 }
-/* UK flag SVG inline */
-/* US flag */
-/* Turkish flag */
-
 .hero-content {
   position: relative; z-index: 2;
   max-width: 700px;
@@ -270,7 +261,6 @@ input, textarea, select, button { font-family: inherit; }
 }
 .hero-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); font-weight: 600; letter-spacing: 0.3px; }
 
-/* Floating icons on hero right */
 .hero-visual {
   position: absolute; right: 4%; top: 50%; transform: translateY(-50%);
   z-index: 2; display: flex; flex-direction: column; gap: 1.2rem;
@@ -294,8 +284,6 @@ input, textarea, select, button { font-family: inherit; }
 }
 .hero-card-title { font-weight: 700; font-size: 0.88rem; }
 .hero-card-sub { font-size: 0.75rem; color: rgba(255,255,255,0.65); }
-
-/* wave divider */
 .wave-divider { display: block; margin-top: -2px; }
 
 @keyframes slideDown {
@@ -326,9 +314,7 @@ input, textarea, select, button { font-family: inherit; }
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
 }
-.about-art {
-  position: relative;
-}
+.about-art { position: relative; }
 .about-main-card {
   background: linear-gradient(135deg, var(--blue), var(--blue-dark));
   border-radius: var(--radius-lg); padding: 2.5rem;
@@ -752,7 +738,6 @@ footer {
 </head>
 <body>
 
-<!-- ══ STICKY NAV ══ -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#" class="nav-logo" aria-label="English Bridge Türkiye Home">
@@ -760,62 +745,51 @@ footer {
       English <span>Bridge</span>&nbsp;<em>Türkiye</em>
     </a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#courses">Courses</a>
-      <a href="#features">Features</a>
-      <a href="#why">Why Us</a>
-      <a href="#register">Register</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-tr="Hakkımızda">About</a>
+      <a href="#courses" data-tr="Kurslar">Courses</a>
+      <a href="#features" data-tr="Özellikler">Features</a>
+      <a href="#why" data-tr="Neden Biz">Why Us</a>
+      <a href="#register" data-tr="Kayıt Ol">Register</a>
+      <a href="#contact" data-tr="İletişim">Contact</a>
     </div>
-    <button class="nav-lang" aria-label="Switch language">🌐 TR / EN</button>
-    <a href="#register" class="nav-cta">Start Free →</a>
+    <button class="nav-lang" aria-label="Switch language">🌐 TR</button>
+    <a href="#register" class="nav-cta" data-tr="Ücretsiz Başla →">Start Free →</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-menu" id="mobile-menu" role="menu">
-    <a href="#about" role="menuitem">About Us</a>
-    <a href="#courses" role="menuitem">Courses</a>
-    <a href="#features" role="menuitem">Features</a>
-    <a href="#why" role="menuitem">Why Choose Us</a>
-    <a href="#register" role="menuitem">Register</a>
-    <a href="#contact" role="menuitem">Contact</a>
+    <a href="#about" role="menuitem" data-tr="Hakkımızda">About Us</a>
+    <a href="#courses" role="menuitem" data-tr="Kurslar">Courses</a>
+    <a href="#features" role="menuitem" data-tr="Özellikler">Features</a>
+    <a href="#why" role="menuitem" data-tr="Neden Biz">Why Choose Us</a>
+    <a href="#register" role="menuitem" data-tr="Kayıt Ol">Register</a>
+    <a href="#contact" role="menuitem" data-tr="İletişim">Contact</a>
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
 <header class="hero" id="home">
   <div class="hero-bg"></div>
-
-  <!-- Decorative SVG shapes: books, lines, pencils -->
   <div class="hero-deco">
     <svg viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- Book stack left -->
       <rect x="-30" y="500" width="180" height="24" rx="4" fill="rgba(255,255,255,0.06)" transform="rotate(-8,-30,500)"/>
       <rect x="-20" y="478" width="160" height="20" rx="3" fill="rgba(255,255,255,0.04)" transform="rotate(-8,-20,478)"/>
       <rect x="-35" y="456" width="170" height="22" rx="4" fill="rgba(255,255,255,0.05)" transform="rotate(-8,-35,456)"/>
-      <!-- Ruled lines top right -->
       <line x1="900" y1="80" x2="1400" y2="80" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
       <line x1="900" y1="100" x2="1400" y2="100" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
       <line x1="900" y1="120" x2="1350" y2="120" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
       <line x1="900" y1="140" x2="1380" y2="140" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-      <!-- Pencil shape bottom right -->
       <polygon points="1380,720 1420,680 1440,700 1400,740" fill="rgba(255,215,0,0.08)"/>
       <polygon points="1395,738 1405,728 1410,735" fill="rgba(255,200,0,0.12)"/>
-      <!-- Circles -->
       <circle cx="80" cy="160" r="120" fill="rgba(255,255,255,0.03)"/>
       <circle cx="1360" cy="600" r="160" fill="rgba(185,28,28,0.07)"/>
       <circle cx="700" cy="750" r="80" fill="rgba(255,255,255,0.03)"/>
-      <!-- A-Z letter scatter -->
       <text x="200" y="700" font-size="64" fill="rgba(255,255,255,0.04)" font-family="Georgia,serif" font-weight="bold">A</text>
       <text x="1200" y="200" font-size="80" fill="rgba(255,255,255,0.04)" font-family="Georgia,serif" font-weight="bold">Z</text>
       <text x="1100" y="750" font-size="50" fill="rgba(255,255,255,0.03)" font-family="Georgia,serif">abc</text>
     </svg>
   </div>
-
-  <!-- Flags top right -->
   <div class="hero-flags" aria-label="Supported countries: UK, USA, Turkey">
-    <!-- UK Flag -->
     <div class="flag-badge" title="United Kingdom">
       <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
         <rect width="60" height="40" fill="#012169"/>
@@ -825,7 +799,6 @@ footer {
         <path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="6"/>
       </svg>
     </div>
-    <!-- US Flag -->
     <div class="flag-badge" title="United States">
       <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
         <rect width="60" height="40" fill="#B22234"/>
@@ -841,7 +814,6 @@ footer {
         <text x="2" y="18" fill="white" font-size="4">★★★★★★</text>
       </svg>
     </div>
-    <!-- Turkish Flag -->
     <div class="flag-badge" title="Türkiye">
       <svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
         <rect width="60" height="40" fill="#E30A17"/>
@@ -851,26 +823,25 @@ footer {
       </svg>
     </div>
   </div>
-
   <div class="container">
     <div class="hero-content">
-      <div class="hero-eyebrow">English Bridge Türkiye — Online Language Academy</div>
-      <h1>
+      <div class="hero-eyebrow" data-tr="English Bridge Türkiye — Online Dil Akademisi">English Bridge Türkiye — Online Language Academy</div>
+      <h1 data-tr="İngilizceyi<br><em>Türkiye'de Kolayca</em> Öğrenin">
         Learn English<br>
         <em>Easily in Türkiye</em>
       </h1>
-      <p class="hero-sub">Master English for school, university, and life — for all ages and levels</p>
-      <p class="hero-sub-tr">Okul, üniversite ve yaşam için İngilizce öğrenin — her yaş ve seviye için · تعلم الإنجليزية بسهولة</p>
+      <p class="hero-sub" data-tr="Okul, üniversite ve yaşam için İngilizceyi ustalıkla öğrenin — her yaş ve seviye için">Master English for school, university, and life — for all ages and levels</p>
+      <p class="hero-sub-tr" data-tr="تعلم الإنجليزية بسهولة لجميع الأعمار والمستويات">Okul, üniversite ve yaşam için İngilizce öğrenin — her yaş ve seviye için · تعلم الإنجليزية بسهولة</p>
       <div class="hero-btns">
-        <a href="#register" class="btn btn-white">
+        <a href="#register" class="btn btn-white" data-tr="<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' aria-hidden='true'><path d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/><circle cx='9' cy='7' r='4'/><path d='M22 21v-2a4 4 0 0 0-3-3.87'/><path d='M16 3.13a4 4 0 0 1 0 7.75'/></svg> Hemen Kayıt Ol">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Register Now
         </a>
         <a href="https://wa.me/905375139983?text=Hello!%20I%20am%20interested%20in%20English%20Bridge%20Türkiye.%20Please%20give%20me%20more%20information." class="btn btn-wa" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a10.18 10.18 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.86L.062 23.5l5.794-1.516A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.97 0-3.81-.538-5.385-1.473l-.387-.229-4.003 1.048 1.072-3.9-.252-.4A9.799 9.799 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z"/></svg>
-          WhatsApp
+          <span data-tr="WhatsApp İletişim">WhatsApp</span>
         </a>
-        <a href="mailto:faizedrisi@gmail.com?subject=Course%20Inquiry&body=Hello%2C%20I%20am%20interested%20in%20joining%20English%20Bridge%20Türkiye." class="btn btn-mail">
+        <a href="mailto:faizedrisi@gmail.com?subject=Course%20Inquiry&body=Hello%2C%20I%20am%20interested%20in%20joining%20English%20Bridge%20Türkiye." class="btn btn-mail" data-tr="<svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/></svg> E-posta Gönder">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           Send Email
         </a>
@@ -878,119 +849,114 @@ footer {
       <div class="hero-stats">
         <div class="hero-stat">
           <span class="hero-stat-num">3,000+</span>
-          <span class="hero-stat-label">Students Enrolled</span>
+          <span class="hero-stat-label" data-tr="Kayıtlı Öğrenci">Students Enrolled</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-num">6</span>
-          <span class="hero-stat-label">CEFR Levels (A1–C2)</span>
+          <span class="hero-stat-label" data-tr="CEFR Seviyesi (A1-C2)">CEFR Levels (A1–C2)</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-num">%97</span>
-          <span class="hero-stat-label">Satisfaction Rate</span>
+          <span class="hero-stat-label" data-tr="Memnuniyet Oranı">Satisfaction Rate</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Floating cards — visible on desktop -->
   <div class="hero-visual" aria-hidden="true">
     <div class="hero-card">
       <div class="hero-card-icon">📚</div>
       <div>
-        <div class="hero-card-title">All Levels Welcome</div>
-        <div class="hero-card-sub">A1 Beginner → C2 Mastery</div>
+        <div class="hero-card-title" data-tr="Her Seviyeye Uygun">All Levels Welcome</div>
+        <div class="hero-card-sub" data-tr="A1 Başlangıç → C2 Ustalık">A1 Beginner → C2 Mastery</div>
       </div>
     </div>
     <div class="hero-card">
       <div class="hero-card-icon">🗣️</div>
       <div>
-        <div class="hero-card-title">Live Speaking Classes</div>
-        <div class="hero-card-sub">Practice with real teachers</div>
+        <div class="hero-card-title" data-tr="Canlı Konuşma Dersleri">Live Speaking Classes</div>
+        <div class="hero-card-sub" data-tr="Gerçek öğretmenlerle pratik yapın">Practice with real teachers</div>
       </div>
     </div>
     <div class="hero-card">
       <div class="hero-card-icon">🇹🇷</div>
       <div>
-        <div class="hero-card-title">In Turkish & Arabic</div>
-        <div class="hero-card-sub">Clear native-language support</div>
+        <div class="hero-card-title" data-tr="Türkçe ve Arapça Destekli">In Turkish & Arabic</div>
+        <div class="hero-card-sub" data-tr="Anadilde net açıklamalar">Clear native-language support</div>
       </div>
     </div>
   </div>
-
-  <!-- Wave -->
   <svg class="wave-divider" style="position:absolute;bottom:0;left:0;right:0;z-index:2;" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M0,60 C360,0 1080,60 1440,20 L1440,60 Z" fill="white"/>
   </svg>
 </header>
 
-<!-- ══ JOURNEY BANNER ══ -->
 <section class="journey-banner fade-up" aria-labelledby="journey-heading">
-  <h2 id="journey-heading">🚀 Start Your English Journey Today</h2>
-  <p>İngilizce yolculuğunuzu bugün başlatın — Join thousands of learners across Türkiye</p>
-  <a href="#register" class="btn btn-white">Get Started Free →</a>
+  <h2 id="journey-heading" data-tr="🚀 İngilizce Yolculuğunuza Bugün Başlayın">🚀 Start Your English Journey Today</h2>
+  <p data-tr="Türkiye genelindeki binlerce öğrenciye katılın">İngilizce yolculuğunuzu bugün başlatın — Join thousands of learners across Türkiye</p>
+  <a href="#register" class="btn btn-white" data-tr="Ücretsiz Başla →">Get Started Free →</a>
 </section>
 
-<!-- ══ ABOUT ══ -->
 <section class="about" id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about-grid">
       <div class="about-art fade-up">
         <div class="about-main-card">
-          <h3>Who We Are</h3>
-          <p>English Bridge Türkiye is an online English language platform dedicated to helping Turkish and Arabic-speaking learners achieve real fluency. We make English accessible, understandable, and enjoyable — no matter your age or background.</p>
-          <p style="margin-top:0.8rem; color:rgba(255,255,255,0.7); font-style:italic; font-size:0.87rem;">İngilizceyi herkes için erişilebilir kılıyoruz. · نجعل اللغة الإنجليزية في متناول الجميع</p>
+          <h3 data-tr="Biz Kimiz">Who We Are</h3>
+          <p data-tr="English Bridge Türkiye, Türkçe ve Arapça konuşan öğrencilerin gerçek akıcılığa ulaşmalarına yardımcı olmaya adanmış online bir İngilizce dil platformudur. Yaşınız veya geçmişiniz ne olursa olsun, İngilizceyi erişilebilir, anlaşılır ve eğlenceli hale getiriyoruz.">English Bridge Türkiye is an online English language platform dedicated to helping Turkish and Arabic-speaking learners achieve real fluency. We make English accessible, understandable, and enjoyable — no matter your age or background.</p>
+          <p style="margin-top:0.8rem; color:rgba(255,255,255,0.7); font-style:italic; font-size:0.87rem;" data-tr="نجعل اللغة الإنجليزية في متناول الجميع">İngilizceyi herkes için erişilebilir kılıyoruz. · نجعل اللغة الإنجليزية في متناول الجميع</p>
           <div class="about-mini-cards">
             <div class="about-mini">
               <div class="num">3,000+</div>
-              <div class="lbl">Happy Students</div>
+              <div class="lbl" data-tr="Mutlu Öğrenci">Happy Students</div>
             </div>
             <div class="about-mini">
               <div class="num">5★</div>
-              <div class="lbl">Average Rating</div>
+              <div class="lbl" data-tr="Ortalama Puan">Average Rating</div>
             </div>
             <div class="about-mini">
               <div class="num">100%</div>
-              <div class="lbl">Online & Flexible</div>
+              <div class="lbl" data-tr="Online & Esnek">Online & Flexible</div>
             </div>
             <div class="about-mini">
-              <div class="num">All Ages</div>
-              <div class="lbl">Welcome</div>
+              <div class="num" data-tr="Tüm Yaşlar">All Ages</div>
+              <div class="lbl" data-tr="İçin Uygun">Welcome</div>
             </div>
           </div>
         </div>
-        <div class="about-float-badge" aria-hidden="true">
+        <div class="about-float-badge" aria-hidden="true" data-tr="🇹🇷 Türkiye İçin Tasarlandı">
           🇹🇷 Designed for Türkiye
         </div>
       </div>
       <div class="about-text fade-up">
-        <p class="section-tag">About Us / Hakkımızda</p>
-        <h2 class="section-title" id="about-heading">Bridging the Gap Between <span>Languages</span></h2>
-        <p class="section-sub">We understand that learning English as a Turkish or Arabic speaker comes with unique challenges. That's why every lesson, explanation, and resource at English Bridge Türkiye is designed specifically for you.</p>
+        <p class="section-tag" data-tr="Hakkımızda">About Us / Hakkımızda</p>
+        <h2 class="section-title" id="about-heading" data-tr="Diller Arasındaki <span>Köprüyü Kuruyoruz</span>">Bridging the Gap Between <span>Languages</span></h2>
+        <p class="section-sub" data-tr="Türkçe veya Arapça konuşan biri olarak İngilizce öğrenmenin kendine has zorlukları olduğunu anlıyoruz. Bu nedenle English Bridge Türkiye'deki her ders, açıklama ve kaynak sizin için özel olarak tasarlanmıştır.">We understand that learning English as a Turkish or Arabic speaker comes with unique challenges. That's why every lesson, explanation, and resource at English Bridge Türkiye is designed specifically for you.</p>
         <div class="about-points">
           <div class="about-point">
             <div class="about-point-icon">🎯</div>
-            <div class="about-point-text">
+            <div class="about-point-text" data-tr="<strong>Müfredata Uygun İçerik</strong> MEB İngilizce müfredatını takip ediyoruz, böylece okul öğrencileri dersleri için doğrudan destek alırlar.">
               <strong>Curriculum-Aligned Content</strong>
               We follow the Turkish national English curriculum (MEB) so school students get direct support for their classes.
             </div>
           </div>
           <div class="about-point">
             <div class="about-point-icon">🌐</div>
-            <div class="about-point-text">
+            <div class="about-point-text" data-tr="<strong>Çift Dilli Açıklamalar — EN / TR / AR</strong> Karmaşık dilbilgisi kuralları Türkçe ve Arapça olarak net bir şekilde açıklanır. Kafa karışıklığı yok, sadece anlama var.">
               <strong>Bilingual Explanations — EN / TR / AR</strong>
               Complex grammar rules explained clearly in Turkish and Arabic. No confusion, just understanding.
             </div>
           </div>
           <div class="about-point">
             <div class="about-point-icon">📱</div>
-            <div class="about-point-text">
+            <div class="about-point-text" data-tr="<strong>%100 Online — Her Yerden Öğrenin</strong> Evden, telefondan veya Türkiye'nin neresinde olursanız olun. Ulaşım derdi yok, zahmet yok.">
               <strong>100% Online — Learn Anywhere</strong>
               From home, on your phone, or wherever you are in Türkiye. No commute, no hassle.
             </div>
           </div>
           <div class="about-point">
             <div class="about-point-icon">💰</div>
-            <div class="about-point-text">
+            <div class="about-point-text" data-tr="<strong>Uygun & Erişilebilir Fiyatlar</strong> Kaliteli İngilizce eğitimi bir servete mal olmamalıdır. Fiyatlandırmamız Türkiye'deki aileler için adildir.">
               <strong>Affordable & Accessible Pricing</strong>
               Quality English education shouldn't cost a fortune. Our pricing is fair for Turkish families.
             </div>
@@ -1001,135 +967,133 @@ footer {
   </div>
 </section>
 
-<!-- ══ COURSES ══ -->
 <section class="courses" id="courses" aria-labelledby="courses-heading">
   <div class="container">
-    <p class="section-tag fade-up">Our Programs / Kurslarımız</p>
-    <h2 class="section-title fade-up" id="courses-heading">Find Your <span>Perfect Course</span></h2>
-    <p class="section-sub fade-up">From complete beginner to advanced mastery — we have a course for every learner at every stage of life.</p>
+    <p class="section-tag fade-up" data-tr="Kurslarımız">Our Programs / Kurslarımız</p>
+    <h2 class="section-title fade-up" id="courses-heading" data-tr="Size <span>En Uygun Kursu</span> Bulun">Find Your <span>Perfect Course</span></h2>
+    <p class="section-sub fade-up" data-tr="Tamamen başlangıç seviyesinden ileri düzey ustalığa kadar — hayatın her aşamasındaki her öğrenci için bir kursumuz var.">From complete beginner to advanced mastery — we have a course for every learner at every stage of life.</p>
     <div class="courses-grid">
       <div class="course-card fade-up" tabindex="0">
         <div class="course-icon" aria-hidden="true">🌱</div>
         <div class="course-level">A1 – A2</div>
-        <div class="course-name">Beginner English</div>
-        <p class="course-desc">Start from scratch. Learn the alphabet, basic vocabulary, simple sentences, and everyday conversations with full Turkish/Arabic support.</p>
+        <div class="course-name" data-tr="Başlangıç İngilizcesi">Beginner English</div>
+        <p class="course-desc" data-tr="Sıfırdan başlayın. Tam Türkçe/Arapça destekle alfabeyi, temel kelimeleri, basit cümleleri ve günlük konuşmaları öğrenin.">Start from scratch. Learn the alphabet, basic vocabulary, simple sentences, and everyday conversations with full Turkish/Arabic support.</p>
         <div class="course-tags">
-          <span class="course-tag">Grammar Basics</span>
-          <span class="course-tag">Vocabulary</span>
-          <span class="course-tag">Listening</span>
+          <span class="course-tag" data-tr="Temel Dilbilgisi">Grammar Basics</span>
+          <span class="course-tag" data-tr="Kelime Bilgisi">Vocabulary</span>
+          <span class="course-tag" data-tr="Dinleme">Listening</span>
         </div>
-        <a href="#register" class="course-cta">Enroll Now →</a>
+        <a href="#register" class="course-cta" data-tr="Şimdi Kayıt Ol →">Enroll Now →</a>
       </div>
       <div class="course-card red-accent fade-up" tabindex="0">
         <div class="course-icon" aria-hidden="true">📈</div>
         <div class="course-level">B1 – B2</div>
-        <div class="course-name">Intermediate English</div>
-        <p class="course-desc">Build on your foundation. Develop fluent conversation skills, reading comprehension, paragraph writing, and complex grammar structures.</p>
+        <div class="course-name" data-tr="Orta Seviye İngilizce">Intermediate English</div>
+        <p class="course-desc" data-tr="Temelinizin üzerine inşa edin. Akıcı konuşma becerileri, okuduğunu anlama, paragraf yazma ve karmaşık dilbilgisi yapıları geliştirin.">Build on your foundation. Develop fluent conversation skills, reading comprehension, paragraph writing, and complex grammar structures.</p>
         <div class="course-tags">
-          <span class="course-tag">Reading</span>
-          <span class="course-tag">Writing</span>
-          <span class="course-tag">Speaking</span>
+          <span class="course-tag" data-tr="Okuma">Reading</span>
+          <span class="course-tag" data-tr="Yazma">Writing</span>
+          <span class="course-tag" data-tr="Konuşma">Speaking</span>
         </div>
-        <a href="#register" class="course-cta">Enroll Now →</a>
+        <a href="#register" class="course-cta" data-tr="Şimdi Kayıt Ol →">Enroll Now →</a>
       </div>
       <div class="course-card gold-accent fade-up" tabindex="0">
         <div class="course-icon" aria-hidden="true">🏆</div>
         <div class="course-level">C1 – C2</div>
-        <div class="course-name">Advanced English</div>
-        <p class="course-desc">Achieve near-native fluency. Academic writing, professional communication, IELTS/YDS preparation, and advanced discourse skills.</p>
+        <div class="course-name" data-tr="İleri Seviye İngilizce">Advanced English</div>
+        <p class="course-desc" data-tr="Anadile yakın akıcılığa ulaşın. Akademik yazım, profesyonel iletişim, IELTS/YDS hazırlığı ve ileri düzey söylem becerileri.">Achieve near-native fluency. Academic writing, professional communication, IELTS/YDS preparation, and advanced discourse skills.</p>
         <div class="course-tags">
-          <span class="course-tag">IELTS Prep</span>
-          <span class="course-tag">Academic</span>
-          <span class="course-tag">Business</span>
+          <span class="course-tag" data-tr="IELTS Hazırlık">IELTS Prep</span>
+          <span class="course-tag" data-tr="Akademik">Academic</span>
+          <span class="course-tag" data-tr="İş İngilizcesi">Business</span>
         </div>
-        <a href="#register" class="course-cta">Enroll Now →</a>
+        <a href="#register" class="course-cta" data-tr="Şimdi Kayıt Ol →">Enroll Now →</a>
       </div>
       <div class="course-card green-accent fade-up" tabindex="0">
         <div class="course-icon" aria-hidden="true">🏫</div>
-        <div class="course-level">All Levels</div>
-        <div class="course-name">School Support</div>
-        <p class="course-desc">Directly aligned to MEB curriculum. Help for primary, middle, and high school students: grammar, exams (LGS, YKS), and homework support.</p>
+        <div class="course-level" data-tr="Tüm Seviyeler">All Levels</div>
+        <div class="course-name" data-tr="Okul Destek Eğitimleri">School Support</div>
+        <p class="course-desc" data-tr="MEB müfredatıyla doğrudan uyumlu. İlkokul, ortaokul ve lise öğrencileri için yardım: dilbilgisi, sınavlar (LGS, YKS) ve ödev desteği.">Directly aligned to MEB curriculum. Help for primary, middle, and high school students: grammar, exams (LGS, YKS), and homework support.</p>
         <div class="course-tags">
           <span class="course-tag">MEB Aligned</span>
           <span class="course-tag">LGS / YKS</span>
-          <span class="course-tag">All Grades</span>
+          <span class="course-tag" data-tr="Tüm Sınıflar">All Grades</span>
         </div>
-        <a href="#register" class="course-cta">Enroll Now →</a>
+        <a href="#register" class="course-cta" data-tr="Şimdi Kayıt Ol →">Enroll Now →</a>
       </div>
       <div class="course-card purple-accent fade-up" tabindex="0">
         <div class="course-icon" aria-hidden="true">🗣️</div>
-        <div class="course-level">All Levels</div>
-        <div class="course-name">Speaking Practice</div>
-        <p class="course-desc">Live 1-on-1 and group speaking sessions with experienced teachers. Build confidence, improve pronunciation, and speak fluently in real situations.</p>
+        <div class="course-level" data-tr="Tüm Seviyeler">All Levels</div>
+        <div class="course-name" data-tr="Konuşma Pratiği">Speaking Practice</div>
+        <p class="course-desc" data-tr="Deneyimli öğretmenlerle canlı 1'e 1 ve grup konuşma seansları. Özgüven kazanın, telaffuzunuzu geliştirin ve gerçek durumlarda akıcı konuşun.">Live 1-on-1 and group speaking sessions with experienced teachers. Build confidence, improve pronunciation, and speak fluently in real situations.</p>
         <div class="course-tags">
-          <span class="course-tag">Live Classes</span>
-          <span class="course-tag">Pronunciation</span>
-          <span class="course-tag">Confidence</span>
+          <span class="course-tag" data-tr="Canlı Dersler">Live Classes</span>
+          <span class="course-tag" data-tr="Telaffuz">Pronunciation</span>
+          <span class="course-tag" data-tr="Özgüven">Confidence</span>
         </div>
-        <a href="#register" class="course-cta">Enroll Now →</a>
+        <a href="#register" class="course-cta" data-tr="Şimdi Kayıt Ol →">Enroll Now →</a>
       </div>
       <div class="course-card fade-up" tabindex="0">
         <div class="course-icon" aria-hidden="true">🎓</div>
-        <div class="course-level">Adults / University</div>
-        <div class="course-name">University & Career</div>
-        <p class="course-desc">Preparation for university English exams (YÖKDil, TOEFL, IELTS), job interviews, professional emails, and career advancement.</p>
+        <div class="course-level" data-tr="Yetişkinler / Üniversite">Adults / University</div>
+        <div class="course-name" data-tr="Üniversite & Kariyer">University & Career</div>
+        <p class="course-desc" data-tr="Üniversite İngilizce sınavlarına (YÖKDİL, TOEFL, IELTS), iş görüşmelerine, profesyonel e-postalara ve kariyer gelişimine hazırlık.">Preparation for university English exams (YÖKDil, TOEFL, IELTS), job interviews, professional emails, and career advancement.</p>
         <div class="course-tags">
           <span class="course-tag">YÖKDil</span>
           <span class="course-tag">TOEFL</span>
-          <span class="course-tag">Career</span>
+          <span class="course-tag" data-tr="Kariyer">Career</span>
         </div>
-        <a href="#register" class="course-cta">Enroll Now →</a>
+        <a href="#register" class="course-cta" data-tr="Şimdi Kayıt Ol →">Enroll Now →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FEATURES ══ -->
 <section class="features" id="features" aria-labelledby="features-heading">
   <div class="container">
-    <p class="section-tag fade-up">What We Offer</p>
-    <h2 class="section-title fade-up" id="features-heading">Everything You Need to <span>Succeed</span></h2>
-    <p class="section-sub fade-up">Our platform is built around your success — with tools, support, and flexibility that fit your life.</p>
+    <p class="section-tag fade-up" data-tr="Neler Sunuyoruz">What We Offer</p>
+    <h2 class="section-title fade-up" id="features-heading" data-tr="Başarılı Olmak İçin <span>İhtiyacınız Olan Her Şey</span>">Everything You Need to <span>Succeed</span></h2>
+    <p class="section-sub fade-up" data-tr="Platformumuz başarınız etrafında inşa edilmiştir — hayatınıza uyan araçlar, destek ve esneklikle.">Our platform is built around your success — with tools, support, and flexibility that fit your life.</p>
     <div class="features-grid">
       <div class="feature-card fade-up">
         <div class="feat-icon-wrap" aria-hidden="true">💻</div>
-        <h3>Online & Flexible Classes</h3>
-        <p>Study at your own pace, on your own schedule. Live sessions and recorded lessons available 24/7 from any device.
+        <h3 data-tr="Online & Esnek Dersler">Online & Flexible Classes</h3>
+        <p data-tr="Kendi hızınızda, kendi programınıza göre çalışın. Canlı oturumlar ve kaydedilmiş derslere herhangi bir cihazdan 7/24 erişilebilir. <span class='ar'>Esnek online dersler — Her zaman, her yerden</span>">Study at your own pace, on your own schedule. Live sessions and recorded lessons available 24/7 from any device.
           <span class="ar">Esnek online dersler — Her zaman, her yerden</span>
         </p>
       </div>
       <div class="feature-card fade-up">
         <div class="feat-icon-wrap" aria-hidden="true">👩‍🏫</div>
-        <h3>Experienced Teachers</h3>
-        <p>Learn from certified English teachers who specialize in teaching Turkish and Arabic speakers. Real understanding, not just memorization.
+        <h3 data-tr="Deneyimli Öğretmenler">Experienced Teachers</h3>
+        <p data-tr="Sadece ezberletmeyen, gerçekten anlamanızı sağlayan, Türk ve Arap öğrencilere eğitim verme konusunda uzmanlaşmış sertifikalı öğretmenlerden öğrenin. <span class='ar'>Deneyimli öğretmenler · مدرسون ذوو خبرة</span>">Learn from certified English teachers who specialize in teaching Turkish and Arabic speakers. Real understanding, not just memorization.
           <span class="ar">Deneyimli öğretmenler · مدرسون ذوو خبرة</span>
         </p>
       </div>
       <div class="feature-card fade-up">
         <div class="feat-icon-wrap" aria-hidden="true">🌐</div>
-        <h3>Bilingual Explanations</h3>
-        <p>Grammar rules and concepts explained in Turkish and Arabic when needed — so you truly understand, not just translate.
+        <h3 data-tr="Çift Dilli Açıklamalar">Bilingual Explanations</h3>
+        <p data-tr="Gerektiğinde Türkçe ve Arapça açıklanan dilbilgisi kuralları ve kavramları — böylece sadece çevirmez, gerçekten anlarsınız. <span class='ar'>Türkçe ve Arapça açıklamalar mevcut</span>">Grammar rules and concepts explained in Turkish and Arabic when needed — so you truly understand, not just translate.
           <span class="ar">Türkçe ve Arapça açıklamalar mevcut</span>
         </p>
       </div>
       <div class="feature-card fade-up">
         <div class="feat-icon-wrap" aria-hidden="true">💵</div>
-        <h3>Affordable Pricing</h3>
-        <p>High-quality English education at prices that work for Turkish families. Transparent pricing, no hidden fees.
+        <h3 data-tr="Uygun Fiyatlandırma">Affordable Pricing</h3>
+        <p data-tr="Türk ailelerine uygun fiyatlarla yüksek kaliteli İngilizce eğitimi. Şeffaf fiyatlandırma, gizli ücret yok. <span class='ar'>Uygun fiyatlı · أسعار معقولة</span>">High-quality English education at prices that work for Turkish families. Transparent pricing, no hidden fees.
           <span class="ar">Uygun fiyatlı · أسعار معقولة</span>
         </p>
       </div>
       <div class="feature-card fade-up">
         <div class="feat-icon-wrap" aria-hidden="true">📊</div>
-        <h3>Progress Tracking</h3>
-        <p>Weekly progress reports, achievement badges, and personalized feedback so you always know exactly where you stand.
+        <h3 data-tr="Gelişim Takibi">Progress Tracking</h3>
+        <p data-tr="Haftalık gelişim raporları, başarı rozetleri ve kişiselleştirilmiş geri bildirimler sayesinde durumunuzu her zaman tam olarak bilirsiniz. <span class='ar'>İlerleme takibi ve haftalık raporlar</span>">Weekly progress reports, achievement badges, and personalized feedback so you always know exactly where you stand.
           <span class="ar">İlerleme takibi ve haftalık raporlar</span>
         </p>
       </div>
       <div class="feature-card fade-up">
         <div class="feat-icon-wrap" aria-hidden="true">💬</div>
-        <h3>WhatsApp Support</h3>
-        <p>Have a question? Message your teacher directly on WhatsApp. Fast responses and personal support throughout your journey.
+        <h3 data-tr="WhatsApp Desteği">WhatsApp Support</h3>
+        <p data-tr="Bir sorunuz mu var? Öğretmeninize doğrudan WhatsApp üzerinden mesaj atın. Yolculuğunuz boyunca hızlı yanıtlar ve kişisel destek. <span class='ar'>WhatsApp üzerinden anlık destek</span>">Have a question? Message your teacher directly on WhatsApp. Fast responses and personal support throughout your journey.
           <span class="ar">WhatsApp üzerinden anlık destek</span>
         </p>
       </div>
@@ -1137,49 +1101,48 @@ footer {
   </div>
 </section>
 
-<!-- ══ WHY CHOOSE US ══ -->
 <section class="why" id="why" aria-labelledby="why-heading">
   <div class="container">
     <div class="why-inner">
       <div class="why-content fade-up">
-        <p class="section-tag red">Why English Bridge?</p>
-        <h2 class="section-title" id="why-heading">Learning That <span class="red">Actually Works</span></h2>
-        <p class="section-sub">We don't teach English the old way. Our approach is built around how Turkish and Arabic speakers actually think and learn.</p>
+        <p class="section-tag red" data-tr="Neden English Bridge?">Why English Bridge?</p>
+        <h2 class="section-title" id="why-heading" data-tr="Gerçekten <span class='red'>İşe Yarayan Öğrenim</span>">Learning That <span class="red">Actually Works</span></h2>
+        <p class="section-sub" data-tr="İngilizceyi eski yöntemlerle öğretmiyoruz. Yaklaşımımız, Türkçe ve Arapça konuşanların gerçekte nasıl düşündükleri ve öğrendikleri üzerine inşa edilmiştir.">We don't teach English the old way. Our approach is built around how Turkish and Arabic speakers actually think and learn.</p>
         <div class="why-points">
           <div class="why-point">
             <div class="why-num" aria-hidden="true">1</div>
             <div class="why-text">
-              <h4>Real Understanding, Not Memorization</h4>
-              <p>We explain the "why" behind every grammar rule so it sticks forever — not just until the exam.</p>
+              <h4 data-tr="Ezber Değil, Gerçekten Anlama">Real Understanding, Not Memorization</h4>
+              <p data-tr="Her dilbilgisi kuralının ardındaki 'neden'i açıklıyoruz, böylece sadece sınava kadar değil, sonsuza dek aklınızda kalır.">We explain the "why" behind every grammar rule so it sticks forever — not just until the exam.</p>
             </div>
           </div>
           <div class="why-point">
             <div class="why-num" aria-hidden="true">2</div>
             <div class="why-text">
-              <h4>Designed for Turkish & Arabic Learners</h4>
-              <p>Our curriculum acknowledges the specific linguistic differences Turkish and Arabic speakers face — and bridges them.</p>
+              <h4 data-tr="Türk ve Arap Öğrenciler İçin Tasarlandı">Designed for Turkish & Arabic Learners</h4>
+              <p data-tr="Müfredatımız, Türkçe ve Arapça konuşanların karşılaştığı belirli dilbilimsel farklılıkları kabul eder ve bu köprüyü kurar.">Our curriculum acknowledges the specific linguistic differences Turkish and Arabic speakers face — and bridges them.</p>
             </div>
           </div>
           <div class="why-point">
             <div class="why-num" aria-hidden="true">3</div>
             <div class="why-text">
-              <h4>Personalized Support for Every Student</h4>
-              <p>One-on-one attention, customized lesson plans, and teacher support via WhatsApp whenever you need it.</p>
+              <h4 data-tr="Her Öğrenci İçin Kişiselleştirilmiş Destek">Personalized Support for Every Student</h4>
+              <p data-tr="Birebir ilgi, özelleştirilmiş ders planları ve ihtiyacınız olduğunda WhatsApp üzerinden anında öğretmen desteği.">One-on-one attention, customized lesson plans, and teacher support via WhatsApp whenever you need it.</p>
             </div>
           </div>
           <div class="why-point">
             <div class="why-num" aria-hidden="true">4</div>
             <div class="why-text">
-              <h4>All Ages, All Levels Welcome</h4>
-              <p>Primary school child or working adult — we have a path for you. It's never too early or too late.</p>
+              <h4 data-tr="Her Yaş, Her Seviye Uygundur">All Ages, All Levels Welcome</h4>
+              <p data-tr="İster ilkokul çocuğu ister çalışan bir yetişkin olun, sizin için bir yolumuz var. Asla çok erken veya çok geç değildir.">Primary school child or working adult — we have a path for you. It's never too early or too late.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="why-visual fade-up">
-        <h3>Our Mission</h3>
-        <p>English Bridge Türkiye was born from a simple belief: every Turkish and Arabic-speaking student deserves a clear, supportive, and effective path to English fluency. We are that bridge.</p>
-        <p style="margin-top:0.8rem;">İngilizce öğrenmek zor olmak zorunda değil. With the right guidance, every student can succeed.</p>
+        <h3 data-tr="Misyonumuz">Our Mission</h3>
+        <p data-tr="English Bridge Türkiye basit bir inançtan doğdu: Türkçe ve Arapça konuşan her öğrenci, İngilizce akıcılığına giden net, destekleyici ve etkili bir yolu hak ediyor. Biz o köprüyüz.">English Bridge Türkiye was born from a simple belief: every Turkish and Arabic-speaking student deserves a clear, supportive, and effective path to English fluency. We are that bridge.</p>
+        <p style="margin-top:0.8rem;" data-tr="İngilizce öğrenmek zor olmak zorunda değil. Doğru rehberlikle her öğrenci başarabilir.">İngilizce öğrenmek zor olmak zorunda değil. With the right guidance, every student can succeed.</p>
         <div class="flags-row">
           <div class="flag-item">🇬🇧 British English</div>
           <div class="flag-item">🇺🇸 American English</div>
@@ -1188,49 +1151,48 @@ footer {
           <div class="flag-item">🇹🇷 Türkçe Destek</div>
           <div class="flag-item">🇸🇦 دعم عربي</div>
         </div>
-        <a href="#register" class="btn btn-white" style="margin-top:1.8rem; display:inline-flex; background:rgba(255,255,255,0.15); color:white; border:1.5px solid rgba(255,255,255,0.3);">Join Us Today →</a>
+        <a href="#register" class="btn btn-white" style="margin-top:1.8rem; display:inline-flex; background:rgba(255,255,255,0.15); color:white; border:1.5px solid rgba(255,255,255,0.3);" data-tr="Bugün Bize Katılın →">Join Us Today →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ TESTIMONIALS ══ -->
 <section class="testimonials" aria-labelledby="testi-heading">
   <div class="container">
-    <p class="section-tag fade-up">Student Stories</p>
-    <h2 class="section-title fade-up" id="testi-heading">What Our <span>Students Say</span></h2>
-    <p class="section-sub fade-up">Real results from real students across Türkiye and beyond.</p>
+    <p class="section-tag fade-up" data-tr="Öğrenci Hikayeleri">Student Stories</p>
+    <h2 class="section-title fade-up" id="testi-heading" data-tr="Öğrencilerimiz <span>Ne Diyor</span>">What Our <span>Students Say</span></h2>
+    <p class="section-sub fade-up" data-tr="Türkiye ve ötesindeki gerçek öğrencilerden gerçek sonuçlar.">Real results from real students across Türkiye and beyond.</p>
     <div class="testi-grid">
       <div class="testi-card fade-up">
         <div class="testi-stars" aria-label="5 stars">★★★★★</div>
-        <blockquote class="testi-quote">"I was struggling with English at school for years. After 2 months with English Bridge, my grade went from 50 to 88. The Turkish explanations made everything click!"</blockquote>
+        <blockquote class="testi-quote" data-tr="&quot;Yıllarca okulda İngilizceyle mücadele ettim. English Bridge ile 2 ay geçirdikten sonra notum 50'den 88'e çıktı. Türkçe açıklamalar her şeyin yerine oturmasını sağladı!&quot;">"I was struggling with English at school for years. After 2 months with English Bridge, my grade went from 50 to 88. The Turkish explanations made everything click!"</blockquote>
         <div class="testi-author">
           <div class="testi-avatar" aria-hidden="true">AY</div>
           <div>
             <div class="testi-name">Ayşe Yılmaz</div>
-            <div class="testi-role">High School Student, İstanbul</div>
+            <div class="testi-role" data-tr="Lise Öğrencisi, İstanbul">High School Student, İstanbul</div>
           </div>
         </div>
       </div>
       <div class="testi-card fade-up">
         <div class="testi-stars" aria-label="5 stars">★★★★★</div>
-        <blockquote class="testi-quote">"As an Arabic speaker in Turkey, finding an English course that explains things in both Turkish and Arabic was amazing. I passed my university English exam with 82!"</blockquote>
+        <blockquote class="testi-quote" data-tr="&quot;Türkiye'de Arapça konuşan biri olarak, her şeyi hem Türkçe hem de Arapça açıklayan bir İngilizce kursu bulmak harikaydı. Üniversite İngilizce sınavımı 82 ile geçtim!&quot;">"As an Arabic speaker in Turkey, finding an English course that explains things in both Turkish and Arabic was amazing. I passed my university English exam with 82!"</blockquote>
         <div class="testi-author">
           <div class="testi-avatar red" aria-hidden="true">MA</div>
           <div>
             <div class="testi-name">Mohammed Al-Rashid</div>
-            <div class="testi-role">University Student, Ankara</div>
+            <div class="testi-role" data-tr="Üniversite Öğrencisi, Ankara">University Student, Ankara</div>
           </div>
         </div>
       </div>
       <div class="testi-card fade-up">
         <div class="testi-stars" aria-label="5 stars">★★★★★</div>
-        <blockquote class="testi-quote">"I'm 45 years old and wanted to learn English for travel. The teachers were so patient and encouraging. Now I can confidently speak with tourists!"</blockquote>
+        <blockquote class="testi-quote" data-tr="&quot;45 yaşındayım ve seyahat etmek için İngilizce öğrenmek istiyordum. Öğretmenler çok sabırlı ve teşvik ediciydi. Artık turistlerle güvenle konuşabiliyorum!&quot;">"I'm 45 years old and wanted to learn English for travel. The teachers were so patient and encouraging. Now I can confidently speak with tourists!"</blockquote>
         <div class="testi-author">
           <div class="testi-avatar green" aria-hidden="true">FK</div>
           <div>
             <div class="testi-name">Fatma Kaya</div>
-            <div class="testi-role">Business Owner, İzmir</div>
+            <div class="testi-role" data-tr="İşletme Sahibi, İzmir">Business Owner, İzmir</div>
           </div>
         </div>
       </div>
@@ -1238,76 +1200,75 @@ footer {
   </div>
 </section>
 
-<!-- ══ REGISTRATION FORM ══ -->
 <section class="register-section" id="register" aria-labelledby="register-heading">
   <div class="container">
     <div class="register-wrapper">
       <div class="register-info fade-up">
-        <p class="section-tag">Free Registration</p>
-        <h2 class="section-title" id="register-heading">Begin Your <span>English Journey</span></h2>
-        <p class="section-sub">Fill in the form and we'll contact you within 24 hours to discuss the best course for you — completely free consultation!</p>
+        <p class="section-tag" data-tr="Ücretsiz Kayıt">Free Registration</p>
+        <h2 class="section-title" id="register-heading" data-tr="İngilizce <span>Yolculuğunuza</span> Başlayın">Begin Your <span>English Journey</span></h2>
+        <p class="section-sub" data-tr="Formu doldurun, sizin için en iyi kursu görüşmek üzere 24 saat içinde sizinle iletişime geçelim — tamamen ücretsiz danışmanlık!">Fill in the form and we'll contact you within 24 hours to discuss the best course for you — completely free consultation!</p>
         <div class="reg-benefits" role="list">
-          <div class="reg-benefit" role="listitem">Free first consultation with a teacher</div>
-          <div class="reg-benefit" role="listitem">Level assessment test at no charge</div>
-          <div class="reg-benefit" role="listitem">Personalized course recommendation</div>
-          <div class="reg-benefit" role="listitem">Flexible schedule that works for you</div>
-          <div class="reg-benefit" role="listitem">Support in Turkish and Arabic</div>
+          <div class="reg-benefit" role="listitem" data-tr="Bir öğretmenle ücretsiz ilk danışmanlık">Free first consultation with a teacher</div>
+          <div class="reg-benefit" role="listitem" data-tr="Ücretsiz seviye tespit sınavı">Level assessment test at no charge</div>
+          <div class="reg-benefit" role="listitem" data-tr="Kişiselleştirilmiş kurs önerisi">Personalized course recommendation</div>
+          <div class="reg-benefit" role="listitem" data-tr="Size uygun esnek program">Flexible schedule that works for you</div>
+          <div class="reg-benefit" role="listitem" data-tr="Türkçe ve Arapça destek">Support in Turkish and Arabic</div>
         </div>
       </div>
       <div class="form-card fade-up">
-        <h3>📝 Register Now / Kayıt Ol</h3>
+        <h3 data-tr="📝 Hemen Kayıt Olun">📝 Register Now / Kayıt Ol</h3>
         <form id="registration-form" novalidate>
           <div class="form-grid">
             <div class="form-group">
-              <label class="form-label" for="fname">Full Name *</label>
-              <input class="form-input" type="text" id="fname" name="fname" placeholder="Your full name" required autocomplete="name">
+              <label class="form-label" for="fname" data-tr="Ad Soyad *">Full Name *</label>
+              <input class="form-input" type="text" id="fname" name="fname" placeholder="Your full name" data-tr-placeholder="Adınız ve soyadınız" required autocomplete="name">
             </div>
             <div class="form-group">
-              <label class="form-label" for="femail">Email Address *</label>
-              <input class="form-input" type="email" id="femail" name="femail" placeholder="your@email.com" required autocomplete="email">
+              <label class="form-label" for="femail" data-tr="E-posta Adresi *">Email Address *</label>
+              <input class="form-input" type="email" id="femail" name="femail" placeholder="your@email.com" data-tr-placeholder="ornek@email.com" required autocomplete="email">
             </div>
             <div class="form-group">
-              <label class="form-label" for="fphone">WhatsApp Number *</label>
-              <input class="form-input" type="tel" id="fphone" name="fphone" placeholder="+90 537 513 99 83" required autocomplete="tel">
+              <label class="form-label" for="fphone" data-tr="WhatsApp Numarası *">WhatsApp Number *</label>
+              <input class="form-input" type="tel" id="fphone" name="fphone" placeholder="+90 537 513 99 83" data-tr-placeholder="+90 537 513 99 83" required autocomplete="tel">
             </div>
             <div class="form-group">
-              <label class="form-label" for="flevel">Your English Level</label>
+              <label class="form-label" for="flevel" data-tr="İngilizce Seviyeniz">Your English Level</label>
               <select class="form-select" id="flevel" name="flevel">
-                <option value="">Select level...</option>
-                <option value="a1">A1 — Complete Beginner</option>
-                <option value="a2">A2 — Elementary</option>
-                <option value="b1">B1 — Pre-Intermediate</option>
-                <option value="b2">B2 — Intermediate</option>
-                <option value="c1">C1 — Upper-Intermediate</option>
-                <option value="c2">C2 — Advanced</option>
-                <option value="unknown">I'm not sure — help me assess</option>
+                <option value="" data-tr="Seviye seçin...">Select level...</option>
+                <option value="a1" data-tr="A1 — Tam Başlangıç">A1 — Complete Beginner</option>
+                <option value="a2" data-tr="A2 — Temel">A2 — Elementary</option>
+                <option value="b1" data-tr="B1 — Orta Öncesi">B1 — Pre-Intermediate</option>
+                <option value="b2" data-tr="B2 — Orta">B2 — Intermediate</option>
+                <option value="c1" data-tr="C1 — İleri Öncesi">C1 — Upper-Intermediate</option>
+                <option value="c2" data-tr="C2 — İleri">C2 — Advanced</option>
+                <option value="unknown" data-tr="Emin değilim — değerlendirmeme yardım edin">I'm not sure — help me assess</option>
               </select>
             </div>
             <div class="form-group full">
-              <label class="form-label" for="fcourse">Course Interest</label>
+              <label class="form-label" for="fcourse" data-tr="İlgilendiğiniz Kurs">Course Interest</label>
               <select class="form-select" id="fcourse" name="fcourse">
-                <option value="">Select course...</option>
-                <option value="beginner">Beginner English (A1–A2)</option>
-                <option value="intermediate">Intermediate English (B1–B2)</option>
-                <option value="advanced">Advanced English (C1–C2)</option>
-                <option value="school">School Support (MEB Curriculum)</option>
-                <option value="speaking">Speaking Practice</option>
-                <option value="university">University & Career English</option>
+                <option value="" data-tr="Kurs seçin...">Select course...</option>
+                <option value="beginner" data-tr="Başlangıç İngilizcesi (A1–A2)">Beginner English (A1–A2)</option>
+                <option value="intermediate" data-tr="Orta Seviye İngilizce (B1–B2)">Intermediate English (B1–B2)</option>
+                <option value="advanced" data-tr="İleri Seviye İngilizce (C1–C2)">Advanced English (C1–C2)</option>
+                <option value="school" data-tr="Okul Destek Eğitimleri (MEB Müfredatı)">School Support (MEB Curriculum)</option>
+                <option value="speaking" data-tr="Konuşma Pratiği">Speaking Practice</option>
+                <option value="university" data-tr="Üniversite ve Kariyer İngilizcesi">University & Career English</option>
               </select>
             </div>
             <div class="form-group full">
-              <label class="form-label" for="fmessage">Your Message (optional)</label>
-              <textarea class="form-textarea" id="fmessage" name="fmessage" placeholder="Tell us about your goals, questions, or anything we should know..."></textarea>
+              <label class="form-label" for="fmessage" data-tr="Mesajınız (isteğe bağlı)">Your Message (optional)</label>
+              <textarea class="form-textarea" id="fmessage" name="fmessage" placeholder="Tell us about your goals, questions, or anything we should know..." data-tr-placeholder="Bize hedeflerinizden, sorularınızdan veya bilmemiz gereken herhangi bir şeyden bahsedin..."></textarea>
             </div>
           </div>
-          <button type="submit" class="form-submit">
+          <button type="submit" class="form-submit" data-tr="Hemen Kayıt Olun — Ücretsiz! ✓">
             Register Now — It's Free! ✓
           </button>
-          <p class="form-note">We respect your privacy. Your information is never shared with third parties.</p>
+          <p class="form-note" data-tr="Gizliliğinize saygı duyuyoruz. Bilgileriniz asla üçüncü şahıslarla paylaşılmaz.">We respect your privacy. Your information is never shared with third parties.</p>
         </form>
         <div id="form-success" role="alert">
           <span>🎉</span>
-          Thank you! We received your registration and will contact you within 24 hours via WhatsApp or email.
+          <span data-tr="Teşekkürler! Kayıt bilgilerinizi aldık, en geç 24 saat içinde size WhatsApp veya e-posta ile ulaşacağız.">Thank you! We received your registration and will contact you within 24 hours via WhatsApp or email.</span>
           <br><br>
           <small>Teşekkürler! Kayıt bilgilerinizi aldık, en geç 24 saat içinde size ulaşacağız.</small>
         </div>
@@ -1316,22 +1277,21 @@ footer {
   </div>
 </section>
 
-<!-- ══ CONTACT ══ -->
 <section class="contact-section" id="contact" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-inner">
       <div class="contact-info fade-up">
-        <p class="section-tag" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.8);">Get In Touch</p>
-        <h2 id="contact-heading">We're Here to Help</h2>
-        <p>Have questions? Want to know which course is right for you? Reach out — we love hearing from future students!</p>
+        <p class="section-tag" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.8);" data-tr="Bize Ulaşın">Get In Touch</p>
+        <h2 id="contact-heading" data-tr="Yardım Etmek İçin Buradayız">We're Here to Help</h2>
+        <p data-tr="Sorularınız mı var? Hangi kursun size uygun olduğunu bilmek ister misiniz? Bize ulaşın — gelecekteki öğrencilerimizden haber almayı seviyoruz!">Have questions? Want to know which course is right for you? Reach out — we love hearing from future students!</p>
         <div class="contact-cards">
           <a href="https://wa.me/905375139983?text=Merhaba!%20İngilizce%20kursunuz%20hakkında%20bilgi%20almak%20istiyorum." class="contact-card" target="_blank" rel="noopener" aria-label="Contact via WhatsApp">
             <div class="contact-card-icon wa" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a10.18 10.18 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.86L.062 23.5l5.794-1.516A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.97 0-3.81-.538-5.385-1.473l-.387-.229-4.003 1.048 1.072-3.9-.252-.4A9.799 9.799 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z"/></svg>
             </div>
             <div>
-              <div class="contact-card-label">WhatsApp</div>
-              <div class="contact-card-value">+90 557 513 99 83</div>
+              <div class="contact-card-label" data-tr="WhatsApp">WhatsApp</div>
+              <div class="contact-card-value">+90 537 513 99 83</div>
             </div>
           </a>
           <a href="mailto:faizedrisi@gmail.com" class="contact-card" aria-label="Send email">
@@ -1339,7 +1299,7 @@ footer {
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </div>
             <div>
-              <div class="contact-card-label">Email</div>
+              <div class="contact-card-label" data-tr="E-posta">Email</div>
               <div class="contact-card-value">faizedrisi@gmail.com</div>
             </div>
           </a>
@@ -1348,26 +1308,26 @@ footer {
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <div class="contact-card-label">Location</div>
-              <div class="contact-card-value">Türkiye — 100% Online</div>
+              <div class="contact-card-label" data-tr="Konum">Location</div>
+              <div class="contact-card-value" data-tr="Türkiye — %100 Online">Türkiye — 100% Online</div>
             </div>
           </div>
         </div>
       </div>
       <div class="contact-right fade-up">
-        <h3>Ready to Start? 🚀</h3>
-        <p>Click below to message us directly on WhatsApp or send an email — our team replies within a few hours.</p>
+        <h3 data-tr="Başlamaya Hazır Mısınız? 🚀">Ready to Start? 🚀</h3>
+        <p data-tr="WhatsApp'tan doğrudan mesaj göndermek veya e-posta atmak için aşağıya tıklayın — ekibimiz birkaç saat içinde yanıt verir.">Click below to message us directly on WhatsApp or send an email — our team replies within a few hours.</p>
         <div class="contact-btns">
           <a href="https://wa.me/905375139983?text=Hello!%20I%20am%20interested%20in%20English%20Bridge%20Türkiye%20courses.%20Please%20contact%20me." class="contact-btn wa" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a10.18 10.18 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.86L.062 23.5l5.794-1.516A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.97 0-3.81-.538-5.385-1.473l-.387-.229-4.003 1.048 1.072-3.9-.252-.4A9.799 9.799 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z"/></svg>
-            Chat on WhatsApp
+            <span data-tr="WhatsApp'tan Yazın">Chat on WhatsApp</span>
           </a>
           <a href="mailto:faizedrisi@gmail.com?subject=Course%20Inquiry%20—%20English%20Bridge%20Türkiye&body=Hello%2C%20I%20am%20interested%20in%20your%20English%20courses.%20Please%20send%20me%20more%20information." class="contact-btn email">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            Send an Email
+            <span data-tr="E-posta Gönderin">Send an Email</span>
           </a>
         </div>
-        <p style="margin-top:1.3rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">
+        <p style="margin-top:1.3rem; font-size:0.8rem; color:rgba(255,255,255,0.4);" data-tr="📞 Ortalama yanıt süresi: 3 saatin altında · متوسط وقت الرد: أقل من 3 ساعات">
           📞 Average response time: under 3 hours · متوسط وقت الرد: أقل من 3 ساعات
         </p>
       </div>
@@ -1375,7 +1335,6 @@ footer {
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer role="contentinfo">
   <div class="container">
     <div class="footer-grid">
@@ -1384,7 +1343,7 @@ footer {
           <div class="nav-logo-icon" style="width:32px;height:32px;font-size:0.85rem;">EB</div>
           English <span>Bridge</span>&nbsp;<em>Türkiye</em>
         </div>
-        <p>Online English language education for Turkish and Arabic-speaking learners. All ages, all levels, all goals. Türkiye'nin İngilizce köprüsü.</p>
+        <p data-tr="Türkçe ve Arapça konuşan öğrenciler için online İngilizce dil eğitimi. Her yaş, her seviye, her hedef. Türkiye'nin İngilizce köprüsü.">Online English language education for Turkish and Arabic-speaking learners. All ages, all levels, all goals. Türkiye'nin İngilizce köprüsü.</p>
         <div class="footer-social" aria-label="Social media links">
           <a href="#" class="social-btn" aria-label="Instagram" title="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
@@ -1401,59 +1360,91 @@ footer {
         </div>
       </div>
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h4 data-tr="Hızlı Bağlantılar">Quick Links</h4>
         <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#courses">Our Courses</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#why">Why Choose Us</a></li>
-          <li><a href="#register">Register</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" data-tr="Hakkımızda">About Us</a></li>
+          <li><a href="#courses" data-tr="Kurslarımız">Our Courses</a></li>
+          <li><a href="#features" data-tr="Özellikler">Features</a></li>
+          <li><a href="#why" data-tr="Neden Biz">Why Choose Us</a></li>
+          <li><a href="#register" data-tr="Kayıt Ol">Register</a></li>
+          <li><a href="#contact" data-tr="İletişim">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Courses</h4>
+        <h4 data-tr="Kurslar">Courses</h4>
         <ul>
-          <li><a href="#register">Beginner A1–A2</a></li>
-          <li><a href="#register">Intermediate B1–B2</a></li>
-          <li><a href="#register">Advanced C1–C2</a></li>
-          <li><a href="#register">School Support</a></li>
-          <li><a href="#register">Speaking Practice</a></li>
-          <li><a href="#register">University English</a></li>
+          <li><a href="#register" data-tr="Başlangıç A1–A2">Beginner A1–A2</a></li>
+          <li><a href="#register" data-tr="Orta B1–B2">Intermediate B1–B2</a></li>
+          <li><a href="#register" data-tr="İleri C1–C2">Advanced C1–C2</a></li>
+          <li><a href="#register" data-tr="Okul Destek Eğitimleri">School Support</a></li>
+          <li><a href="#register" data-tr="Konuşma Pratiği">Speaking Practice</a></li>
+          <li><a href="#register" data-tr="Üniversite İngilizcesi">University English</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4 data-tr="İletişim">Contact</h4>
         <ul>
-          <li><a href="https://wa.me/905375139983" target="_blank" rel="noopener">WhatsApp Chat</a></li>
-          <li><a href="mailto:faizedrisi@gmail.com">Email Us</a></li>
-          <li><a href="#register">Free Registration</a></li>
+          <li><a href="https://wa.me/905375139983" target="_blank" rel="noopener" data-tr="WhatsApp Sohbet">WhatsApp Chat</a></li>
+          <li><a href="mailto:faizedrisi@gmail.com" data-tr="Bize E-posta Gönderin">Email Us</a></li>
+          <li><a href="#register" data-tr="Ücretsiz Kayıt">Free Registration</a></li>
         </ul>
         <div style="margin-top:1rem; font-size:0.82rem; color:rgba(255,255,255,0.35); line-height:1.7;">
-          🇹🇷 Türkiye — 100% Online<br>
-          ⏰ Mon–Sat: 9:00–21:00<br>
+          🇹🇷 <span data-tr="Türkiye — %100 Online">Türkiye — 100% Online</span><br>
+          ⏰ <span data-tr="Pzt–Cmt: 9:00–21:00">Mon–Sat: 9:00–21:00</span><br>
           🗣️ EN · TR · AR
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 English Bridge Türkiye. All rights reserved. · Tüm hakları saklıdır.</p>
+      <p data-tr="© 2025 English Bridge Türkiye. Tüm hakları saklıdır.">© 2025 English Bridge Türkiye. All rights reserved. · Tüm hakları saklıdır.</p>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Policy</a>
+        <a href="#" data-tr="Gizlilik Politikası">Privacy Policy</a>
+        <a href="#" data-tr="Hizmet Şartları">Terms of Service</a>
+        <a href="#" data-tr="Çerez Politikası">Cookie Policy</a>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- Scroll to top button -->
 <button id="scroll-top" aria-label="Scroll to top">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
 </button>
 
-<!-- ══ JAVASCRIPT ══ -->
 <script>
+// ── Language Toggle Logic
+let currentLang = 'en';
+const langBtn = document.querySelector('.nav-lang');
+const trElements = document.querySelectorAll('[data-tr]');
+const phElements = document.querySelectorAll('[data-tr-placeholder]');
+
+// Store original English values
+trElements.forEach(el => {
+  if (!el.hasAttribute('data-en')) {
+    el.setAttribute('data-en', el.innerHTML);
+  }
+});
+phElements.forEach(el => {
+  if (!el.hasAttribute('data-en-placeholder')) {
+    el.setAttribute('data-en-placeholder', el.getAttribute('placeholder') || '');
+  }
+});
+
+langBtn.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'tr' : 'en';
+  document.documentElement.lang = currentLang;
+  langBtn.innerHTML = currentLang === 'en' ? '🌐 TR' : '🌐 EN';
+
+  // Toggle Inner HTML
+  trElements.forEach(el => {
+    el.innerHTML = currentLang === 'tr' ? el.getAttribute('data-tr') : el.getAttribute('data-en');
+  });
+
+  // Toggle Placeholders
+  phElements.forEach(el => {
+    el.setAttribute('placeholder', currentLang === 'tr' ? el.getAttribute('data-tr-placeholder') : el.getAttribute('data-en-placeholder'));
+  });
+});
+
 // ── Sticky nav scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -1502,17 +1493,15 @@ form.addEventListener('submit', (e) => {
   const femail = document.getElementById('femail').value.trim();
   const fphone = document.getElementById('fphone').value.trim();
   if (!fname || !femail || !fphone) {
-    alert('Please fill in your name, email, and phone number to register.');
+    alert(currentLang === 'tr' ? 'Lütfen kayıt olmak için adınızı, e-postanızı ve telefon numaranızı doldurun.' : 'Please fill in your name, email, and phone number to register.');
     return;
   }
-  // Compose WhatsApp pre-fill message
   const level = document.getElementById('flevel').value || 'Not specified';
   const course = document.getElementById('fcourse').value || 'Not specified';
   const message = document.getElementById('fmessage').value.trim();
   const waMsg = encodeURIComponent(
     `New Registration from English Bridge Türkiye website!\n\nName: ${fname}\nEmail: ${femail}\nPhone: ${fphone}\nLevel: ${level}\nCourse: ${course}\nMessage: ${message || 'None'}`
   );
-  // Open WhatsApp with pre-filled message (replace number)
   window.open(`https://wa.me/905375139983?text=${waMsg}`, '_blank');
   form.style.display = 'none';
   formSuccess.style.display = 'block';
