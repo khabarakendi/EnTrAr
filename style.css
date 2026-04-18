@@ -39,6 +39,21 @@ h1 {
   font-size: 18px;
   font-weight: bold;
 }
+<div class="buttons">
+  <a href="register.html" class="register">📝 Register</a>
+  
+  <a href="https://wa.me/905551234567?text=Hello%20I%20want%20to%20learn%20English" 
+     class="whatsapp" 
+     target="_blank" 
+     rel="noopener noreferrer">
+     💬 WhatsApp
+  </a>
+  
+  <a href="mailto:faizedrisi@gmail.com?subject=English%20Course%20Inquiry&body=Hello%2C%20I'm%20interested%20in%20your%20English%20courses." 
+     class="email">
+     ✉️ Send Email
+  </a>
+</div>
 
 .register { background: #e63946; }
 .whatsapp { background: #25D366; }
@@ -84,4 +99,14 @@ form button {
 
 form button:hover {
   opacity: 0.9;
+}
+a[href^="mailto"] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+}
+
+.contact-card, .btn-mail, .contact-btn.email {
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
